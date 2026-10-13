@@ -1,0 +1,23 @@
+info:
+  name: Update project
+  type: http
+  seq: 4
+
+http:
+  method: PUT
+  url: "{{baseUrl}}/api/projects/1"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Web redesign v2", 
+        "description": "Updated scope"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

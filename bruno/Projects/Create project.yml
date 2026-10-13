@@ -1,0 +1,23 @@
+info:
+  name: Create project
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/projects"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "Web redesign", 
+       "description": "New company website"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
