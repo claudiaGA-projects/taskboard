@@ -13,6 +13,7 @@ max_line_length = 100
 [*.java]
 ij_java_method_call_chain_wrap = on_every_item
 ij_java_align_multiline_chained_methods = true
+ij_java_else_on_new_line = false
 # Always use braces in control statements
 ij_java_if_brace_force = always
 ij_java_for_brace_force = always
