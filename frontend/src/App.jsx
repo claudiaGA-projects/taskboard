@@ -1,12 +1,19 @@
+import { Navigate, Route, Routes } from 'react-router';
+import Layout from './components/Layout.jsx';
+import ProjectsPage from './pages/ProjectsPage.jsx';
+import ProjectDetailPage from './pages/ProjectDetailPage.jsx';
+import NotFoundPage from './pages/NotFoundPage.jsx';
+
 function App() {
   return (
-    <div className="container py-5">
-      <h1 className="mb-4">TaskBoard</h1>
-      <div className="alert alert-primary">Bootstrap is working with Sass.</div>
-      <button type="button" className="btn btn-primary">
-        Primary button
-      </button>
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Navigate to="/projects" replace />} />
+        <Route path="projects" element={<ProjectsPage />} />
+        <Route path="projects/:projectId" element={<ProjectDetailPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }
 
