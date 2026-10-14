@@ -10,9 +10,9 @@ function ProjectsPage() {
   useEffect(() => {
     getProjects()
       .then((data) => setProjects(data))
-      .catch(() => setError('Could not load projects. Please try again localStorage.'))
+      .catch(() => setError('Could not load projects. Please try again later.'))
       .finally(() => setLoading(false));
-  });
+  }, []);
 
   if (loading) {
     return (
@@ -34,7 +34,7 @@ function ProjectsPage() {
       {projects.length === 0 ? (
         <p className="text-muted">There are no projects yet.</p>
       ) : (
-        <table class="table table-striped">
+        <table className="table table-striped">
           <thead>
             <tr>
               <th scope="col">Project code</th>
