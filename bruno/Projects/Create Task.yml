@@ -1,0 +1,24 @@
+info:
+  name: Create Task
+  type: http
+  seq: 8
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/projects/1/tasks"
+  body:
+    type: json
+    data: |-
+      {
+        "title": "Design homepage", 
+        "priority": "HIGH", 
+        "dueAt": "2026-10-20T14:00:00Z"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
