@@ -8,17 +8,17 @@ import jakarta.validation.constraints.Size;
 import java.time.Instant;
 
 public record TaskRequest(
-        @NotBlank
-        @Size(max = 150)
-        String title,
+    @NotBlank
+    @Size(max = 150)
+    String title,
 
-        @Size(max = 1000)
-        String description,
+    @Size(max = 1000)
+    String description,
 
-        TaskStatus status,
+    TaskStatus status,
 
-        TaskPriority priority,
+    TaskPriority priority,
 
-        Instant dueAt
+    Instant dueAt
 ) {
 }

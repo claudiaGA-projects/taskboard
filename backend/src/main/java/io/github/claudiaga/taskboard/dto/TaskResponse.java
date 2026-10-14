@@ -7,23 +7,23 @@ import io.github.claudiaga.taskboard.entity.TaskStatus;
 import java.time.Instant;
 
 public record TaskResponse(
-        Long id,
-        String title,
-        String description,
-        TaskStatus status,
-        TaskPriority priority,
-        Instant dueAt,
-        Long projectId
+    Long id,
+    String title,
+    String description,
+    TaskStatus status,
+    TaskPriority priority,
+    Instant dueAt,
+    Long projectId
 ) {
     public static TaskResponse fromEntity(Task task) {
         return new TaskResponse(
-                task.getId(),
-                task.getTitle(),
-                task.getDescription(),
-                task.getStatus(),
-                task.getPriority(),
-                task.getDueAt(),
-                task.getProject().getId()
+            task.getId(),
+            task.getTitle(),
+            task.getDescription(),
+            task.getStatus(),
+            task.getPriority(),
+            task.getDueAt(),
+            task.getProject().getId()
         );
     }
 }
