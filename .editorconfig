@@ -8,11 +8,23 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 indent_style = space
 indent_size = 4
-max_line_length = 120
+max_line_length = 100
 
 [*.java]
-ij_java_method_call_chain_wrap = normal
+ij_java_method_call_chain_wrap = on_every_item
 ij_java_align_multiline_chained_methods = true
+# Always use braces in control statements
+ij_java_if_brace_force = always
+ij_java_for_brace_force = always
+ij_java_while_brace_force = always
+ij_java_do_while_brace_force = always
+# Never use wildcard imports
+ij_java_class_count_to_use_import_on_demand = 999
+ij_java_names_count_to_use_import_on_demand = 999
+# At most one consecutive blank line
+ij_java_keep_blank_lines_in_code = 1
+ij_java_keep_blank_lines_in_declarations = 1
+ij_java_keep_blank_lines_before_right_brace = 0
 
 [*.{js,jsx,ts,tsx,json,yml,yaml,scss,css,html}]
 indent_size = 2

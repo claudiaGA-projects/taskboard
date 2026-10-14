@@ -9,5 +9,4 @@ class TaskboardApiApplicationTests {
     @Test
     void contextLoads() {
     }
-
 }
