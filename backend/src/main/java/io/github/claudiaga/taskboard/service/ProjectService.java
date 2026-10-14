@@ -19,7 +19,10 @@ public class ProjectService {
     private final ProjectRepository projectRepository;
 
     public List<ProjectResponse> findAll() {
-        return projectRepository.findAllByOrderByCreatedAtDesc().stream().map(ProjectResponse::fromEntity).toList();
+        return projectRepository.findAllByOrderByCreatedAtDesc()
+                                .stream()
+                                .map(ProjectResponse::fromEntity)
+                                .toList();
     }
 
     public ProjectResponse findById(Long id) {
@@ -49,6 +52,7 @@ public class ProjectService {
     }
 
     private Project getProjectOrThrow(Long id) {
-        return projectRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Project", id));
+        return projectRepository.findById(id)
+                                .orElseThrow(() -> new ResourceNotFoundException("Project", id));
     }
 }
