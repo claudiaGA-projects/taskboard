@@ -1,0 +1,20 @@
+info:
+  name: List done tasks
+  type: http
+  seq: 10
+
+http:
+  method: GET
+  url: "{{baseUrl}}/api/projects/1/tasks?status=DONE"
+  params:
+    - name: status
+      value: DONE
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false

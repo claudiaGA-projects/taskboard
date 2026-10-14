@@ -10,3 +10,6 @@ spring:
       ddl-auto: update
     show-sql: true
     open-in-view: false
+app:
+  cors:
+    allowed-origins: http://localhost:5173

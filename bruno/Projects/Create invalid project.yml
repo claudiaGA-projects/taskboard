@@ -1,0 +1,23 @@
+info:
+  name: Create invalid project
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{baseUrl}}/api/projects"
+  body:
+    type: json
+    data: |-
+      {
+        "name": "", 
+        "description": "No name"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
