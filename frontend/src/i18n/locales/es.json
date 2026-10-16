@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "projects": "Proyectos"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "new": "Nuevo proyecto",
+    "empty": "Todavía no hay proyectos.",
+    "loadError": "No se han podido cargar los proyectos. Inténtalo de nuevo más tarde.",
+    "view": "Ver",
+    "columns": {
+      "code": "Código",
+      "name": "Nombre",
+      "description": "Descripción",
+      "created": "Creado",
+      "actions": "Acciones"
+    }
+  },
+  "common": {
+    "loading": "Cargando..."
+  }
+}
