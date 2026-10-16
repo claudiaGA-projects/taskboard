@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { getProjects } from '../api/projects';
 
 function ProjectsPage() {
+  const { t, i18n } = useTranslation();
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -10,7 +12,7 @@ function ProjectsPage() {
   useEffect(() => {
     getProjects()
       .then((data) => setProjects(data))
-      .catch(() => setError('Could not load projects. Please try again later.'))
+      .catch(() => setError('projects.loadError'))
       .finally(() => setLoading(false));
   }, []);
 
@@ -18,36 +20,36 @@ function ProjectsPage() {
     return (
       <div className="text-center py-5">
         <div className="spinner-border text-primary" role="status">
-          <span className="visually-hidden">Loading...</span>
+          <span className="visually-hidden">{t('common.loading')}</span>
         </div>
       </div>
     );
   }
 
   if (error) {
-    return <div className="alert alert-danger">{error}</div>;
+    return <div className="alert alert-danger">{t(error)}</div>;
   }
 
   return (
     <>
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h1 className="mb-0">Projects</h1>
+        <h1 className="mb-0">{t('projects.title')}</h1>
         <Link to="/projects/new" className="btn btn-primary">
-          New project
+          {t('projects.new')}
         </Link>
       </div>
       {projects.length === 0 ? (
-        <p className="text-muted">There are no projects yet.</p>
+        <p className="text-muted">{t('projects.empty')}</p>
       ) : (
         <table className="table table-striped">
           <thead>
             <tr>
-              <th scope="col">Project code</th>
-              <th scope="col">Name</th>
-              <th scope="col">Description</th>
-              <th scope="col">Created</th>
+              <th scope="col">{t('projects.columns.code')}</th>
+              <th scope="col">{t('projects.columns.name')}</th>
+              <th scope="col">{t('projects.columns.description')}</th>
+              <th scope="col">{t('projects.columns.created')}</th>
               <th scope="col">
-                <span className="visually-hidden">Actions</span>
+                <span className="visually-hidden">{t('projects.columns.actions')}</span>
               </th>
             </tr>
           </thead>
@@ -57,10 +59,10 @@ function ProjectsPage() {
                 <th>{project.id}</th>
                 <td>{project.name}</td>
                 <td>{project.description}</td>
-                <td>{new Date(project.createdAt).toLocaleDateString()}</td>
+                <td>{new Date(project.createdAt).toLocaleDateString(i18n.resolvedLanguage)}</td>
                 <td>
                   <Link to={`/projects/${project.id}`} className="btn btn-sm btn-outline-primary">
-                    View
+                    {t('projects.view')}
                   </Link>
                 </td>
               </tr>
