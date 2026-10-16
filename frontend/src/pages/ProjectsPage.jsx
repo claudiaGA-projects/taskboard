@@ -30,7 +30,12 @@ function ProjectsPage() {
 
   return (
     <>
-      <h1>Projects</h1>
+      <div className="d-flex justify-content-between align-items-center mb-3">
+        <h1 className="mb-0">Projects</h1>
+        <Link to="/projects/new" className="btn btn-primary">
+          New project
+        </Link>
+      </div>
       {projects.length === 0 ? (
         <p className="text-muted">There are no projects yet.</p>
       ) : (
