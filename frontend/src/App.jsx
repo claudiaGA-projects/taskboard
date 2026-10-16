@@ -3,6 +3,7 @@ import Layout from './components/Layout.jsx';
 import ProjectsPage from './pages/ProjectsPage.jsx';
 import ProjectDetailPage from './pages/ProjectDetailPage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
+import NewProjectPage from './pages/NewProjectPage.jsx';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="projects" element={<ProjectsPage />} />
         <Route path="projects/:projectId" element={<ProjectDetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="projects/new" element={<NewProjectPage />} />
       </Route>
     </Routes>
   );
