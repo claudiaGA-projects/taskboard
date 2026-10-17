@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "projects": "Projects"
+  },
+  "projects": {
+    "title": "Projects",
+    "new": "New project",
+    "empty": "There are no projects yet.",
+    "loadError": "Could not load projects. Please try again later.",
+    "view": "View",
+    "columns": {
+      "code": "Code",
+      "name": "Name",
+      "description": "Description",
+      "created": "Created",
+      "actions": "Actions"
+    }
+  },
+  "common": {
+    "loading": "Loading..."
+  }
+}
